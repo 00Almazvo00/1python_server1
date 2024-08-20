@@ -1,0 +1,16 @@
+pipeline {
+  agent any
+  stages {
+    stage('version') {
+      steps {
+        sh 'python3 --version'
+      }
+    }
+    stage('main') {
+      steps {
+        sh 'python3 main.py &'
+        stash(name: 'compiled-results', includes: '/var/lib/jenkins/workspace/py_web_server/venv/main.py')
+      }
+    }
+  }
+}
