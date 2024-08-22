@@ -24,9 +24,9 @@ def losd_page_from_get_request(request_data):
     path = request_data.split(' ')[1]
     response = ''
     try:
-        print ('.venv'+ path)
+        print ('venv'+ path)
         with open('.'+path, 'rb') as file:
-        # with open('.venv'+path, 'rb') as file:
+        # with open('venv'+path, 'rb') as file:
             response = file.read()
         return HDRS.encode('utf-8') + response
     except FileNotFoundError:
