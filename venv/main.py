@@ -4,7 +4,7 @@ import socket
 def start_my_server():
     try:
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server.bind(('127.0.0.1',2000))
+        server.bind(('127.0.0.1',3000))
         server.listen(4)
         while True:
             print('working...')
